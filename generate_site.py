@@ -330,7 +330,7 @@ home = head(
 </div>
 </section>
 
-<div class="wrap bottom-cta">
+<div class="bottom-cta">
 <h2>Get Meccha Chameleon cheats</h2>
 <p>ESP, aimbot-style tag assist, wallhack heat vision, and hider auto paint. Instant delivery after checkout.</p>
 <a class="btn btn-primary" href="{BUY}" rel="noopener sponsored">PURCHASE</a>
@@ -449,7 +449,7 @@ cheats = head(
 </div>
 </section>
 
-<div class="bottom-cta" style="margin-top:2rem">
+<div class="bottom-cta">
 <h2>Purchase Meccha Chameleon cheats</h2>
 <p>ESP, aimbot tag assist, wallhack heat vision, auto paint, and match tools. Monthly or lifetime.</p>
 <a class="btn btn-primary" href="{BUY}" rel="noopener sponsored">PURCHASE</a>
@@ -507,7 +507,7 @@ def article_page(slug, title, description, h1, date, body_html, keywords_label):
 <h1>{h1}</h1>
 <p class="meta-line">Updated {date} · Meccha Chameleon cheats guide</p>
 {body_html}
-<div class="bottom-cta" style="margin-top:2.5rem">
+<div class="bottom-cta">
 <h2>Get Meccha Chameleon cheats</h2>
 <p>ESP, aimbot tag assist, and hider camo in one pack.</p>
 <a class="btn btn-primary" href="{BUY}" rel="noopener sponsored">BUY CHEATS</a>

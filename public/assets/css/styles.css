@@ -46,11 +46,18 @@ a:hover{color:var(--accent)}
   padding:.55rem .9rem;border-radius:999px;transition:color .15s ease,background .15s ease;
 }
 .nav-links a:hover,.nav-links a[aria-current="page"]{color:var(--ink);background:rgba(13,107,74,.08)}
-.nav-links .buy{
-  background:var(--brand);color:#fff!important;margin-left:.35rem;
+.nav-links a.buy{
+  background:var(--brand);
+  color:#fff!important;
+  margin-left:.35rem;
   box-shadow:0 8px 20px rgba(13,107,74,.22);
 }
-.nav-links .buy:hover{background:var(--brand-deep);filter:none}
+.nav-links a.buy:hover,
+.nav-links a.buy:focus-visible{
+  background:var(--brand-deep)!important;
+  color:#fff!important;
+  box-shadow:0 8px 20px rgba(10,82,57,.28);
+}
 .menu-btn{display:none;border:1px solid var(--line);background:var(--soft);border-radius:10px;padding:.5rem .75rem;font-weight:700;font-family:inherit}
 
 /* Hero — one clean composition */
@@ -166,15 +173,20 @@ section + section{border-top:1px solid var(--line)}
 @media(min-width:800px){.video-stack.two{grid-template-columns:1fr 1fr;gap:1.25rem}}
 
 .bottom-cta{
-  margin:0 0 var(--space);padding:clamp(1.75rem,3vw,2.35rem);
+  width:min(100% - 2rem,var(--max));
+  margin-inline:auto;
+  margin-bottom:var(--space);
+  padding:clamp(1.75rem,3vw,2.35rem);
   border-radius:calc(var(--radius) + 4px);
   background:linear-gradient(135deg,var(--brand-deep),var(--brand));
   color:#fff;
+  display:block;
+  text-align:left;
 }
 .bottom-cta h2,.bottom-cta p{color:#fff}
 .bottom-cta p{opacity:.92;max-width:36rem;margin-bottom:1.1rem}
-.bottom-cta .btn-primary{background:#fff;color:var(--brand-deep);box-shadow:none}
-.bottom-cta .btn-primary:hover{background:#f3f6f3}
+.bottom-cta .btn-primary{background:#fff;color:var(--brand-deep)!important;box-shadow:none}
+.bottom-cta .btn-primary:hover{background:#f3f6f3;color:var(--brand-deep)!important}
 
 .site-footer{border-top:1px solid var(--line);padding:2.25rem 0 2.5rem;background:rgba(255,255,255,.55)}
 .footer-grid{display:flex;flex-wrap:wrap;gap:1.25rem 2rem;justify-content:space-between;align-items:flex-start}
@@ -208,7 +220,7 @@ section + section{border-top:1px solid var(--line)}
   }
   .nav-links.open{display:flex}
   .nav-links a{width:100%;border-radius:10px}
-  .nav-links .buy{margin-left:0;text-align:center}
+  .nav-links a.buy{margin-left:0;text-align:center}
   .feature:nth-child(even){padding-left:0;border-left:0}
 }
 @media(prefers-reduced-motion:reduce){
