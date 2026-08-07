@@ -35,7 +35,7 @@ def minify_css(css: str) -> str:
 
 def head(title, description, canonical, og_type="website", extra="", preload_hero=False):
     css = (ROOT / "assets/css/site.css").read_text()
-    preload = '<link rel="preload" as="image" type="image/webp" imagesrcset="/assets/img/hero-banner-sm.webp 640w, /assets/img/hero-banner.webp 960w" imagesizes="(max-width:800px) 100vw, 520px" href="/assets/img/hero-banner-sm.webp">' if preload_hero else ""
+    preload = '<link rel="preload" as="image" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4704690/163e2a742e5fb8e1f5d1e3a890da98f04ab809d4/header.jpg">' if preload_hero else ""
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
