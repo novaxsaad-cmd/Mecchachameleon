@@ -1,3 +1,7 @@
 name = "mecchacheats"
 compatibility_date = "2026-08-01"
-pages_build_output_dir = "."
+
+[assets]
+directory = "./public"
+not_found_handling = "404-page"
+html_handling = "auto-trailing-slash"

@@ -1,18 +1,37 @@
 # mecchacheats.com
 
-Static site for Meccha Chameleon cheats content. Deploy on Cloudflare Pages.
+Static site for Meccha Chameleon cheats content. Ready for Cloudflare Pages / Workers static assets.
 
-## Deploy
+## Cloudflare deploy
 
-1. Connect this repo to Cloudflare Pages.
-2. Build command: leave empty (prebuilt static files).
-3. Output directory: `/` (repository root).
-4. Set custom domain `mecchacheats.com`.
+Site files are in `public/`.
+
+### Option A — Wrangler deploy command (recommended for current project settings)
+
+Deploy command:
+
+```bash
+npx wrangler deploy
+```
+
+`wrangler.toml` points assets at `./public`.
+
+### Option B — Cloudflare Pages UI (no wrangler deploy command)
+
+- Build command: empty
+- Build output directory: `public`
+- Clear any custom deploy command
+
+Then attach custom domain `mecchacheats.com`.
+
+## Regenerate pages
+
+```bash
+python3 generate_site.py
+```
 
 ## Local preview
 
 ```bash
-python3 -m http.server 8080
+npm run preview
 ```
-
-Open http://127.0.0.1:8080

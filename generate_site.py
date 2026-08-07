@@ -3,7 +3,7 @@
 from pathlib import Path
 import re
 
-ROOT = Path("/workspace")
+ROOT = Path("/workspace/public")
 BUY = "https://zadeyo.com/go/SAAD?to=%2Fproducts%2Fmeccha-chameleon-cheats"
 LOGO = "https://zadeyo.com/_next/image?url=%2Frt-removebg-preview.png&w=64&q=75"
 DOMAIN = "https://mecchacheats.com"
