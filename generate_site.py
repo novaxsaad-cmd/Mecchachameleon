@@ -275,18 +275,19 @@ home = head(
 </div>
 </section>
 
-<section>
+<section class="keyword-guide">
 <div class="wrap">
 <div class="section-head">
-<h1>Meccha cheats keyword guide</h1>
+<h2>Meccha cheats keyword guide</h2>
 <p>Searches people actually use when they want Meccha Chameleon cheats.</p>
 </div>
 <ul class="keyword-list">
-<li><strong>meccha chameleon cheats</strong> — full pack: hider camo, seeker ESP, match tools. See the <a href="/cheats/">features page</a>.</li>
-<li><strong>meccha cheats / chameleon cheats</strong> — shorter queries for the same Steam hide-and-seek tools.</li>
-<li><strong>meccha chameleon esp / meccha esp / chameleon esp</strong> — seeker heat vision and wallhack. Read the <a href="/blog/meccha-chameleon-esp-guide/">ESP guide</a>.</li>
-<li><strong>meccha chameleon aimbot / mecha aimbot / chameleon aimbot</strong> — instant tag through obstacles. See <a href="/blog/meccha-chameleon-aimbot-tips/">aimbot tips</a>.</li>
-<li><strong>meccha chameleon wallhack / hider camo cheat</strong> — wall vision for seekers, auto paint for hiders. <a href="/blog/chameleon-cheats-hider-seeker/">Hider vs seeker guide</a>.</li>
+<li><strong>meccha chameleon cheats</strong>Full pack: hider camo, seeker ESP, match tools. See the <a href="/cheats/">features page</a>.</li>
+<li><strong>meccha cheats / chameleon cheats</strong>Shorter queries for the same Steam hide-and-seek tools.</li>
+<li><strong>meccha chameleon esp / meccha esp / chameleon esp</strong>Seeker heat vision and wallhack. Read the <a href="/blog/meccha-chameleon-esp-guide/">ESP guide</a>.</li>
+<li><strong>meccha chameleon aimbot / mecha aimbot / chameleon aimbot</strong>Instant tag through obstacles. See <a href="/blog/meccha-chameleon-aimbot-tips/">aimbot tips</a>.</li>
+<li><strong>meccha chameleon wallhack / hider camo cheat</strong>Wall vision for seekers, auto paint for hiders. <a href="/blog/chameleon-cheats-hider-seeker/">Hider vs seeker guide</a>.</li>
+<li><strong>undetected meccha chameleon cheats</strong>Same modules for public lobbies on Windows 10/11 — heat vision, auto paint, and instant tag in one loader.</li>
 </ul>
 </div>
 </section>
