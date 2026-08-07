@@ -192,13 +192,13 @@ home = head(
 </div>
 </section>
 
-<section class="video-section">
+<section class="video-section" id="watch-in-action">
 <div class="wrap">
 <div class="section-head">
-<h2>Watch Meccha Chameleon cheats in play</h2>
-<p>Quick look at camouflage, ESP, and seeker closes before you dig into features.</p>
+<h2>Watch in action</h2>
+<p>Meccha cheats gameplay — camouflage, ESP, and seeker tools running in lobby footage.</p>
 </div>
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon cheats gameplay demo with ESP and camouflage")}
+{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/meccha-cheats-video-poster.webp","Meccha cheats gameplay video watch in action")}
 </div>
 </section>
 
