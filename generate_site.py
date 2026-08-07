@@ -187,7 +187,7 @@ home = head(
 </div>
 </div>
 <div class="hero-visual">
-<img class="media" src="/assets/img/hero-banner-sm.webp" srcset="/assets/img/hero-banner-sm.webp 640w, /assets/img/hero-banner.webp 960w" sizes="(max-width:800px) 100vw, 520px" width="960" height="449" alt="Meccha Chameleon cheats hero showing Steam hide and seek gameplay" fetchpriority="high" decoding="async">
+<img class="media" src="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4704690/163e2a742e5fb8e1f5d1e3a890da98f04ab809d4/header.jpg" width="460" height="215" alt="Meccha Chameleon cheats hero showing Steam hide and seek gameplay" fetchpriority="high" decoding="async">
 </div>
 </div>
 </section>
