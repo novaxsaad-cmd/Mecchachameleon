@@ -2,7 +2,7 @@
   "name": "mecchacheats",
   "private": true,
   "scripts": {
-    "deploy": "wrangler deploy",
+    "deploy": "wrangler deploy --assets=./public",
     "preview": "python3 -m http.server 8080 --directory public"
   },
   "devDependencies": {
