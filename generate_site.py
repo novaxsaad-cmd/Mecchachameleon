@@ -69,9 +69,9 @@ def nav(active="home"):
         return ' aria-current="page"' if active == key else ""
     return f"""<header class="site-header">
 <div class="wrap nav">
-<a class="brand" href="/" title="mecchacheats.com home">
+<a class="brand" href="/" title="Meccha cheats home">
 <img src="{LOGO}" width="40" height="48" alt="Meccha Chameleon cheats site logo" decoding="async">
-<span>mecchacheats.com</span>
+<span>Meccha cheats</span>
 </a>
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
 <ul class="nav-links" id="nav-menu">
