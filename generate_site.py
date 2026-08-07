@@ -89,20 +89,20 @@ def footer():
 <div>
 <a class="brand" href="/">
 <img src="{LOGO}" width="32" height="38" alt="Meccha Chameleon cheats logo" loading="lazy" decoding="async">
-<span>mecchacheats.com</span>
+<span>Meccha cheats</span>
 </a>
-<p class="fine">Guides and product pages for Meccha Chameleon cheats, ESP, and aimbot tools. Built for players who already know the lobbies.</p>
+<p class="fine">Guides and product pages for Meccha Chameleon cheats, ESP, and aimbot tools.</p>
 </div>
 <nav aria-label="Footer">
 <a href="/">Home</a>
 <a href="/blog/">Blog</a>
-<a href="/cheats/">Meccha Chameleon Cheats</a>
+<a href="/cheats/">Cheats</a>
 <a href="/cheats/#faq">FAQ</a>
 <a href="/privacy/">Privacy</a>
 <a href="{BUY}" rel="noopener sponsored">Get Cheats</a>
 </nav>
 </div>
-<p class="wrap fine">© 2026 mecchacheats.com — Meccha Chameleon cheat info for Steam lobbies. Not affiliated with lemorion_1224.</p>
+<p class="wrap fine">© 2026 mecchacheats.com — Not affiliated with lemorion_1224.</p>
 </footer>
 <script src="/assets/js/main.js" defer></script>
 </body>
@@ -177,20 +177,27 @@ home = head(
 <main>
 <section class="hero">
 <div class="wrap hero-grid">
-<div>
-<p class="eyebrow">Steam hide-and-seek tools</p>
+<div class="hero-copy">
+<p class="eyebrow">Meccha Chameleon on Steam</p>
 <h1>Meccha Chameleon Cheats — ESP, Aimbot &amp; Wallhack</h1>
-<p class="lead">If you queue Meccha Chameleon long enough, you already know the pain: perfect paint jobs that still get spotted, seekers who check every vent, hiders glued to ceilings. These Meccha cheats stack hider camouflage and seeker ESP in one pack so public lobbies stop feeling like a coin flip.</p>
+<p class="lead">Hider camouflage and seeker ESP in one pack for public lobbies. Auto paint, heat vision, instant tag, and match tools that actually map to how Meccha Chameleon plays.</p>
 <div class="cta-row">
 <a class="btn btn-primary" href="{BUY}" rel="noopener sponsored">BUY CHEATS</a>
-<a class="btn btn-secondary" href="/cheats/">See all features</a>
+<a class="btn btn-secondary" href="/cheats/">See features</a>
 </div>
 </div>
-<div>
+<div class="hero-visual">
 <img class="media" src="/assets/img/hero-banner-sm.webp" srcset="/assets/img/hero-banner-sm.webp 640w, /assets/img/hero-banner.webp 960w" sizes="(max-width:800px) 100vw, 520px" width="960" height="449" alt="Meccha Chameleon cheats hero showing Steam hide and seek gameplay" fetchpriority="high" decoding="async">
 </div>
 </div>
-<div class="wrap" style="margin-top:1.25rem">
+</section>
+
+<section class="video-section">
+<div class="wrap">
+<div class="section-head">
+<h2>Watch Meccha Chameleon cheats in play</h2>
+<p>Quick look at camouflage, ESP, and seeker closes before you dig into features.</p>
+</div>
 {video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon cheats gameplay demo with ESP and camouflage")}
 </div>
 </section>
@@ -199,12 +206,12 @@ home = head(
 <div class="wrap">
 <div class="section-head">
 <h2>What you get with Meccha Chameleon cheats</h2>
-<p>Built for the paint-and-hide party game from lemorion_1224. Hider tools cover blend, auto paint, and pose lock. Seeker tools cover heat vision ESP, chameleon wallhack reads, and tag assists people search as Meccha aimbot.</p>
+<p>Built for the paint-and-hide game from lemorion_1224. Hider tools for blend and pose lock. Seeker tools for heat vision ESP and tag assists.</p>
 </div>
 {features_html()}
 <div class="cta-row">
 <a class="btn btn-primary" href="{BUY}" rel="noopener sponsored">GET CHEATS</a>
-<a class="btn btn-secondary" href="/blog/meccha-chameleon-esp-guide/">Read the Meccha ESP guide</a>
+<a class="btn btn-secondary" href="/blog/meccha-chameleon-esp-guide/">ESP guide</a>
 </div>
 </div>
 </section>
@@ -235,10 +242,7 @@ home = head(
 <p>If you typed “chameleon cheats” or “meccha cheats” into Google after a rough night of public lobbies, this is the hider half of that search. Same product page, same loader, different preset when the role flips.</p>
 </div>
 <figure>
-<picture>
-<source media="(max-width:700px)" srcset="/assets/img/meccha-esp-gameplay-sm.webp">
 <img src="/assets/img/meccha-camouflage-hide.webp" width="960" height="540" alt="Meccha Chameleon hider camouflage blend using chameleon cheats auto paint" loading="lazy" decoding="async">
-</picture>
 </figure>
 </div>
 </section>
@@ -246,7 +250,8 @@ home = head(
 <section>
 <div class="wrap prose">
 <div class="section-head">
-<h2>Meccha Chameleon aimbot searches and what the tag assist actually does</h2>
+<h2>Meccha Chameleon aimbot and instant tag</h2>
+<p>What people mean when they search mecha aimbot or chameleon aimbot in this game.</p>
 </div>
 <p>People look up “meccha chameleon aimbot”, “mecha aimbot”, and “chameleon aimbot” because seeker tags feel inconsistent when a hider is half-inside a mesh. Instant Tag is the answer in this pack: a one-hit tag assist that works through obstacles instead of a classic FPS soft-aim crosshair magnet.</p>
 <p>That distinction matters. Meccha Chameleon is not a gunfight. Your “aimbot” moment is the tag connect when the outline is barely visible. Combine it with heat vision ESP so you already know which prop is a player. Super speed closes distance. Timer freeze buys a few extra seconds if the lobby is sweaty.</p>
@@ -258,14 +263,14 @@ home = head(
 <section>
 <div class="wrap">
 <div class="section-head">
-<h2>Gameplay benefits that show up in real lobbies</h2>
-<p>Short version of why these Meccha Chameleon cheats stick after the novelty wears off.</p>
+<h2>What changes in real lobbies</h2>
+<p>Why these Meccha Chameleon cheats stick after the novelty wears off.</p>
 </div>
-<div class="feature-list">
-<article class="feature"><h3>Fewer empty rooms</h3><p>Seeker ESP and minimap tracking cut the dead walking. You rotate toward live hiders instead of clearing the same hallway twice.</p></article>
-<article class="feature"><h3>Faster disguise setups</h3><p>Auto paint and pose snap get you blended before the seeker finishes the countdown voice line.</p></article>
-<article class="feature"><h3>Cleaner last-player hunts</h3><p>Reveal-all plus freeze stops the final camouflaged player from dancing around a corner for two minutes.</p></article>
-<article class="feature"><h3>Configs that survive relaunch</h3><p>Saved presets mean you are not rebuilding hotkeys every session after Steam updates.</p></article>
+<div class="benefit-list">
+<article class="benefit"><h3>Fewer empty rooms</h3><p>Seeker ESP and minimap tracking cut the dead walking. You rotate toward live hiders instead of clearing the same hallway twice.</p></article>
+<article class="benefit"><h3>Faster disguise setups</h3><p>Auto paint and pose snap get you blended before the seeker finishes the countdown voice line.</p></article>
+<article class="benefit"><h3>Cleaner last-player hunts</h3><p>Reveal-all plus freeze stops the final camouflaged player from dancing around a corner for two minutes.</p></article>
+<article class="benefit"><h3>Configs that survive relaunch</h3><p>Saved presets mean you are not rebuilding hotkeys every session after Steam updates.</p></article>
 </div>
 </div>
 </section>
@@ -273,17 +278,16 @@ home = head(
 <section>
 <div class="wrap">
 <div class="section-head">
-<h1>Meccha cheats keyword guide for players who already know the game</h1>
-<p>Natural searches people use when they want Meccha Chameleon cheats without a fluffy landing page.</p>
+<h1>Meccha cheats keyword guide</h1>
+<p>Searches people actually use when they want Meccha Chameleon cheats.</p>
 </div>
-<div class="prose panel">
-<p><strong>meccha chameleon cheats</strong> — the full pack: hider camo, seeker ESP, match tools. Start on the <a href="/cheats/">product features page</a>.</p>
-<p><strong>meccha cheats / chameleon cheats</strong> — shorter queries that still mean the same Steam hide-and-seek tools. Same buy button, same features list.</p>
-<p><strong>meccha chameleon esp / meccha esp / chameleon esp</strong> — seeker heat vision and wallhack reads. Deep dive in the <a href="/blog/meccha-chameleon-esp-guide/">ESP guide</a>.</p>
-<p><strong>meccha chameleon aimbot / mecha aimbot / chameleon aimbot</strong> — tag assist and instant tag through obstacles. Covered in the <a href="/blog/meccha-chameleon-aimbot-tips/">aimbot tips post</a>.</p>
-<p><strong>meccha chameleon wallhack / hider camo cheat</strong> — wall vision for seekers, auto paint for hiders. Role-based walkthrough in <a href="/blog/chameleon-cheats-hider-seeker/">hider vs seeker cheats</a>.</p>
-<p>Long-tail versions like “undetected meccha chameleon esp public lobby” or “meccha chameleon auto paint cheat windows 11” map to the same modules above. This site spreads those phrases where they fit instead of stuffing every heading.</p>
-</div>
+<ul class="keyword-list">
+<li><strong>meccha chameleon cheats</strong> — full pack: hider camo, seeker ESP, match tools. See the <a href="/cheats/">features page</a>.</li>
+<li><strong>meccha cheats / chameleon cheats</strong> — shorter queries for the same Steam hide-and-seek tools.</li>
+<li><strong>meccha chameleon esp / meccha esp / chameleon esp</strong> — seeker heat vision and wallhack. Read the <a href="/blog/meccha-chameleon-esp-guide/">ESP guide</a>.</li>
+<li><strong>meccha chameleon aimbot / mecha aimbot / chameleon aimbot</strong> — instant tag through obstacles. See <a href="/blog/meccha-chameleon-aimbot-tips/">aimbot tips</a>.</li>
+<li><strong>meccha chameleon wallhack / hider camo cheat</strong> — wall vision for seekers, auto paint for hiders. <a href="/blog/chameleon-cheats-hider-seeker/">Hider vs seeker guide</a>.</li>
+</ul>
 </div>
 </section>
 
@@ -313,11 +317,11 @@ home = head(
 </div>
 </section>
 
-<section>
+<section class="video-section">
 <div class="wrap">
 <div class="section-head">
-<h2>More Meccha Chameleon cheat footage</h2>
-<p>Same demos used on the product page — camouflage, ESP, and match tools in motion.</p>
+<h2>More gameplay footage</h2>
+<p>Same demos from the product page — camouflage, ESP, and match tools.</p>
 </div>
 <div class="video-stack two">
 {video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon cheats demo video bottom of homepage")}
@@ -327,8 +331,8 @@ home = head(
 </section>
 
 <div class="wrap bottom-cta">
-<h2>Ready for Meccha Chameleon cheats?</h2>
-<p>Grab the pack with ESP, aimbot-style tag assist, wallhack heat vision, and hider auto paint. Instant delivery after checkout.</p>
+<h2>Get Meccha Chameleon cheats</h2>
+<p>ESP, aimbot-style tag assist, wallhack heat vision, and hider auto paint. Instant delivery after checkout.</p>
 <a class="btn btn-primary" href="{BUY}" rel="noopener sponsored">PURCHASE</a>
 </div>
 </main>
