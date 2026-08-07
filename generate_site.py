@@ -750,7 +750,7 @@ sm.append("</urlset>")
 """)
 
 # README for deploy
-(ROOT / "README.md").write_text("""# mecchacheats.com
+(Path("/workspace") / "README.md").write_text("""# mecchacheats.com
 
 Static site for Meccha Chameleon cheats content. Deploy on Cloudflare Pages.
 
