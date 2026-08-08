@@ -7,6 +7,10 @@ ROOT = Path("/workspace/public")
 BUY = "https://zadeyo.com/go/SAAD?to=%2Fproducts%2Fmeccha-chameleon-cheats"
 LOGO = "https://zadeyo.com/_next/image?url=%2Frt-removebg-preview.png&w=64&q=75"
 DOMAIN = "https://mecchacheats.com"
+CHEATS_CLIP = "/assets/video/mecchachets.mp4"
+CHEATS_POSTER = "/assets/img/meccha-cheats-video-poster.webp"
+ESP_CLIP = "/assets/video/meccha-chameleon-esp-showcase.mp4"
+TINY_POSTER = "/assets/img/poster-tiny.webp"
 
 FEATURES = [
     ("Pixel-Perfect Blend Camo", "Hider rounds get exact surface matching so your paint sits on the wall, floor, or prop without that obvious silhouette."),
@@ -206,7 +210,7 @@ home = head(
 <h2>Watch in action</h2>
 <p>Meccha cheats gameplay — camouflage, ESP, and seeker tools running in lobby footage.</p>
 </div>
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/meccha-cheats-video-poster.webp","Meccha cheats gameplay video watch in action")}
+{video_block(CHEATS_CLIP,CHEATS_POSTER,"Meccha cheats gameplay video watch in action")}
 </div>
 </section>
 
@@ -333,8 +337,8 @@ home = head(
 <p>Same demos from the product page — camouflage, ESP, and match tools.</p>
 </div>
 <div class="video-stack two">
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon cheats demo video bottom of homepage")}
-{video_block("/assets/video/meccha-chameleon-esp-showcase.mp4","/assets/img/poster-tiny.webp","Meccha ESP and seeker tools showcase video")}
+{video_block(CHEATS_CLIP,TINY_POSTER,"Meccha Chameleon cheats demo video bottom of homepage")}
+{video_block(ESP_CLIP,TINY_POSTER,"Meccha ESP and seeker tools showcase video")}
 </div>
 </div>
 </section>
@@ -406,7 +410,7 @@ cheats = head(
 </div>
 
 <section class="video-stack" style="margin-top:1.5rem">
-{hero_video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/meccha-cheats-video-poster.webp","Meccha Chameleon cheats product demo video")}
+{hero_video_block(CHEATS_CLIP,CHEATS_POSTER,"Meccha Chameleon cheats product demo video")}
 </section>
 
 <section class="prose" style="margin-top:2rem">
@@ -419,6 +423,9 @@ cheats = head(
 <section id="features">
 <h2>Complete Meccha Chameleon cheat features</h2>
 <p class="meta-line">Same list players open when they search meccha cheats, chameleon esp, or meccha chameleon aimbot.</p>
+<div class="video-stack" style="margin-bottom:1.5rem">
+{video_block(CHEATS_CLIP,CHEATS_POSTER,"Meccha cheats features clip showing ESP aimbot and camo modules")}
+</div>
 {features_html()}
 <div class="cta-row">
 <a class="btn btn-primary" href="{BUY}" rel="noopener sponsored">GET CHEATS</a>
@@ -458,9 +465,8 @@ cheats = head(
 <section style="margin-top:2rem">
 <h2>Videos</h2>
 <p class="meta-line">Feature footage for Meccha Chameleon ESP, camouflage, and match tools.</p>
-<div class="video-stack two">
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon cheats video section demo", lazy=True)}
-{video_block("/assets/video/meccha-chameleon-esp-showcase.mp4","/assets/img/poster-tiny.webp","Meccha chameleon wallhack and seeker tools video", lazy=True)}
+<div class="video-stack">
+{video_block(CHEATS_CLIP,CHEATS_POSTER,"Meccha Chameleon cheats video section demo", lazy=True)}
 </div>
 </section>
 
@@ -545,8 +551,8 @@ article_page(
     "2026-08-01",
     f"""
 <div class="video-stack two" style="margin-bottom:1.5rem">
-{video_block("/assets/video/meccha-chameleon-esp-showcase.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon ESP wallhack guide video")}
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha cheats demo alongside ESP guide", lazy=True)}
+{video_block(ESP_CLIP,TINY_POSTER,"Meccha Chameleon ESP wallhack guide video")}
+{video_block(CHEATS_CLIP,TINY_POSTER,"Meccha cheats demo alongside ESP guide", lazy=True)}
 </div>
 <article class="prose">
 <p>Most seekers who search “meccha chameleon esp” already know how to walk a map. What they want is a read through walls when the last hider is painted into a beam. Meccha Chameleon ESP in this pack is heat vision plus minimap tracking. It is not a neon box festival unless you dial it that way.</p>
@@ -594,8 +600,8 @@ article_page(
     "2026-08-03",
     f"""
 <div class="video-stack two" style="margin-bottom:1.5rem">
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon aimbot and tag assist demo video")}
-{video_block("/assets/video/meccha-chameleon-esp-showcase.mp4","/assets/img/poster-tiny.webp","ESP footage used with Meccha aimbot closes", lazy=True)}
+{video_block(CHEATS_CLIP,TINY_POSTER,"Meccha Chameleon aimbot and tag assist demo video")}
+{video_block(ESP_CLIP,TINY_POSTER,"ESP footage used with Meccha aimbot closes", lazy=True)}
 </div>
 <article class="prose">
 <p>Search logs for Meccha Chameleon are full of “meccha chameleon aimbot”, “mecha aimbot”, and “chameleon aimbot”. The game does not run like Valorant. Your win condition as seeker is a tag. Instant Tag in the <a href="/cheats/">Meccha Chameleon cheats</a> pack is the aimbot-shaped answer: connect through awkward geometry when a hider is melted into a prop.</p>
@@ -645,8 +651,8 @@ article_page(
     "2026-08-05",
     f"""
 <div class="video-stack two" style="margin-bottom:1.5rem">
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Chameleon cheats hider camouflage demo video")}
-{video_block("/assets/video/meccha-chameleon-esp-showcase.mp4","/assets/img/poster-tiny.webp","Seeker chameleon ESP tools video", lazy=True)}
+{video_block(CHEATS_CLIP,TINY_POSTER,"Chameleon cheats hider camouflage demo video")}
+{video_block(ESP_CLIP,TINY_POSTER,"Seeker chameleon ESP tools video", lazy=True)}
 </div>
 <article class="prose">
 <p>Meccha Chameleon flips your brain every round. Hider tools and seeker tools are not the same menu with a skin. Chameleon cheats that work only list both clearly. This guide splits the <a href="/cheats/">Meccha Chameleon cheats</a> pack by role so you stop running heat vision while trying to blend into a couch.</p>
