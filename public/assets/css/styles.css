@@ -190,7 +190,8 @@ section + section{border-top:1px solid var(--line)}
   .post:last-child{border-right:0;padding-right:0}
 }
 .post:hover{opacity:.82}
-.post h3{color:var(--ink);font-size:1.05rem}
+.post h3,.post h2{color:var(--ink);font-size:1.05rem}
+.post h2{font-weight:700;line-height:1.35;letter-spacing:-.02em;margin:0 0 .35rem}
 .post p{color:var(--muted);font-size:.92rem}
 .tag{font-size:.72rem;font-weight:700;color:var(--brand-hot);text-transform:uppercase;letter-spacing:.05em}
 
