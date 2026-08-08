@@ -330,19 +330,6 @@ home = head(
 </div>
 </section>
 
-<section class="video-section">
-<div class="wrap">
-<div class="section-head">
-<h2>More gameplay footage</h2>
-<p>Same demos from the product page — camouflage, ESP, and match tools.</p>
-</div>
-<div class="video-stack two">
-{video_block(CHEATS_CLIP,TINY_POSTER,"Meccha Chameleon cheats demo video bottom of homepage")}
-{video_block(ESP_CLIP,TINY_POSTER,"Meccha ESP and seeker tools showcase video")}
-</div>
-</div>
-</section>
-
 <div class="bottom-cta">
 <h2>Get Meccha Chameleon cheats</h2>
 <p>ESP, aimbot-style tag assist, wallhack heat vision, and hider auto paint. Instant delivery after checkout.</p>
