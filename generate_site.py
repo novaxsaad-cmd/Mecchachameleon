@@ -7,8 +7,8 @@ ROOT = Path("/workspace/public")
 BUY = "https://zadeyo.com/go/SAAD?to=%2Fproducts%2Fmeccha-chameleon-cheats"
 LOGO = "https://zadeyo.com/_next/image?url=%2Frt-removebg-preview.png&w=64&q=75"
 DOMAIN = "https://mecchacheats.com"
-CHEATS_CLIP = "/assets/video/mecchachets-drive.mp4"
-CHEATS_POSTER = "/assets/img/mecchachets-poster.webp"
+CHEATS_CLIP = "/assets/video/mecchachets-clip.mp4"
+CHEATS_POSTER = "/assets/img/mecchachets-clip-poster.webp"
 ESP_CLIP = "/assets/video/meccha-chameleon-esp-showcase.mp4"
 TINY_POSTER = "/assets/img/poster-tiny.webp"
 
@@ -208,7 +208,7 @@ home = head(
 <div class="wrap">
 <div class="section-head">
 <h2>Watch in action</h2>
-<p>Cheat clip — ESP, aim, and lobby tools running in live footage.</p>
+<p>Meccha cheats gameplay — camouflage, ESP, and seeker tools running in lobby footage.</p>
 </div>
 {video_block(CHEATS_CLIP,CHEATS_POSTER,"Meccha cheats gameplay video watch in action")}
 </div>
