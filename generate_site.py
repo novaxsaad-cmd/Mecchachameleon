@@ -117,6 +117,14 @@ Your browser does not support video playback.
 </video>
 </div>"""
 
+def hero_video_block(src, poster, title):
+    # Single hero demo: muted autoplay until the visitor scrolls
+    return f"""<div class="media hero-video">
+<video controls playsinline muted autoplay loop preload="metadata" poster="{poster}" src="{src}" data-autoplay-until-scroll title="{title}" aria-label="{title}" width="854" height="480">
+Your browser does not support video playback.
+</video>
+</div>"""
+
 def features_html():
     parts = ['<div class="feature-list">']
     for title, text in FEATURES:
@@ -397,9 +405,8 @@ cheats = head(
 <a class="btn btn-secondary" href="#features">Jump to features</a>
 </div>
 
-<section class="video-stack two" style="margin-top:1.5rem">
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon cheats product demo video")}
-{video_block("/assets/video/meccha-chameleon-esp-showcase.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon ESP and aimbot showcase video", lazy=True)}
+<section class="video-stack" style="margin-top:1.5rem">
+{hero_video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/meccha-cheats-video-poster.webp","Meccha Chameleon cheats product demo video")}
 </section>
 
 <section class="prose" style="margin-top:2rem">
