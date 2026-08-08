@@ -7,6 +7,10 @@ ROOT = Path("/workspace/public")
 BUY = "https://zadeyo.com/go/SAAD?to=%2Fproducts%2Fmeccha-chameleon-cheats"
 LOGO = "https://zadeyo.com/_next/image?url=%2Frt-removebg-preview.png&w=64&q=75"
 DOMAIN = "https://mecchacheats.com"
+CHEATS_CLIP = "/assets/video/mecchachets-clip.mp4"
+CHEATS_POSTER = "/assets/img/mecchachets-clip-poster.webp"
+ESP_CLIP = "/assets/video/meccha-chameleon-esp-showcase.mp4"
+TINY_POSTER = "/assets/img/poster-tiny.webp"
 
 FEATURES = [
     ("Pixel-Perfect Blend Camo", "Hider rounds get exact surface matching so your paint sits on the wall, floor, or prop without that obvious silhouette."),
@@ -33,9 +37,11 @@ def minify_css(css: str) -> str:
     css = css.replace(" {", "{").replace("{ ", "{").replace(" }", "}").replace("; ", ";").replace(": ", ":")
     return css.strip()
 
-def head(title, description, canonical, og_type="website", extra="", preload_hero=False):
+def head(title, description, canonical, og_type="website", extra="", preload_hero=False, keywords=""):
     css = (ROOT / "assets/css/site.css").read_text()
     preload = '<link rel="preload" as="image" href="https://shared.akamai.steamstatic.com/store_item_assets/steam/apps/4704690/163e2a742e5fb8e1f5d1e3a890da98f04ab809d4/header.jpg">' if preload_hero else ""
+    kw = keywords or "meccha chameleon cheats, meccha cheats, chameleon cheats, meccha esp, chameleon aimbot, meccha wallhack"
+    og_image = f"{DOMAIN}/assets/img/mecchachets-clip-poster.webp"
     return f"""<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,20 +49,28 @@ def head(title, description, canonical, og_type="website", extra="", preload_her
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{description}">
+<meta name="keywords" content="{kw}">
 <meta name="robots" content="index,follow,max-image-preview:large">
+<meta name="author" content="mecchacheats.com">
+<meta name="theme-color" content="#0a0612">
 <link rel="canonical" href="{canonical}">
 <meta property="og:type" content="{og_type}">
+<meta property="og:locale" content="en_US">
 <meta property="og:site_name" content="mecchacheats.com">
 <meta property="og:title" content="{title}">
 <meta property="og:description" content="{description}">
 <meta property="og:url" content="{canonical}">
-<meta property="og:image" content="{DOMAIN}/assets/img/meccha-chameleon-cover.webp">
+<meta property="og:image" content="{og_image}">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
+<meta property="og:image:alt" content="Meccha Chameleon cheats gameplay showing camouflage and ESP tools">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{title}">
 <meta name="twitter:description" content="{description}">
-<meta name="twitter:image" content="{DOMAIN}/assets/img/meccha-chameleon-cover.webp">
-<link rel="icon" href="{LOGO}" type="image/png">
-<link rel="apple-touch-icon" href="{LOGO}">
+<meta name="twitter:image" content="{og_image}">
+<meta name="twitter:image:alt" content="Meccha Chameleon cheats gameplay showing camouflage and ESP tools">
+<link rel="icon" href="/assets/img/favicon.webp" type="image/webp">
+<link rel="apple-touch-icon" href="/assets/img/logo-128.webp">
 {preload}
 <style>{css}</style>
 {extra}
@@ -70,12 +84,13 @@ def nav(active="home"):
     return f"""<header class="site-header">
 <div class="wrap nav">
 <a class="brand" href="/" title="Meccha cheats home">
-<img src="{LOGO}" width="40" height="48" alt="Meccha Chameleon cheats site logo" decoding="async">
+<img src="/assets/img/logo.webp" width="40" height="48" alt="Meccha Chameleon cheats site logo" decoding="async">
 <span>Meccha cheats</span>
 </a>
 <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav-menu">Menu</button>
 <ul class="nav-links" id="nav-menu">
 <li><a href="/"{cls('home')}>Home</a></li>
+<li><a href="/cheats/"{cls('cheats')}>Cheats</a></li>
 <li><a href="/blog/"{cls('blog')}>Blog</a></li>
 <li><a class="buy" href="{BUY}" rel="noopener sponsored">BUY CHEATS</a></li>
 </ul>
@@ -88,7 +103,7 @@ def footer():
 <div class="wrap footer-grid">
 <div>
 <a class="brand" href="/">
-<img src="{LOGO}" width="32" height="38" alt="Meccha Chameleon cheats logo" loading="lazy" decoding="async">
+<img src="/assets/img/logo.webp" width="32" height="38" alt="Meccha Chameleon cheats logo" loading="lazy" decoding="async">
 <span>Meccha cheats</span>
 </a>
 <p class="fine">Guides and product pages for Meccha Chameleon cheats, ESP, and aimbot tools.</p>
@@ -113,6 +128,14 @@ def video_block(src, poster, title, lazy=True):
     # Always defer video bytes until near viewport / play for Lighthouse LCP
     return f"""<div class="media">
 <video controls playsinline preload="none" poster="{poster}" data-lazy data-src="{src}" title="{title}" aria-label="{title}" width="854" height="480">
+Your browser does not support video playback.
+</video>
+</div>"""
+
+def hero_video_block(src, poster, title):
+    # Single hero demo: muted autoplay until the visitor scrolls
+    return f"""<div class="media hero-video">
+<video controls playsinline muted autoplay loop preload="metadata" poster="{poster}" src="{src}" data-autoplay-until-scroll title="{title}" aria-label="{title}" width="854" height="480">
 Your browser does not support video playback.
 </video>
 </div>"""
@@ -168,8 +191,8 @@ import json
 home_extra = f'<script type="application/ld+json">{json.dumps(home_schema, separators=(",",":"))}</script>'
 
 home = head(
-    'Meccha Chameleon Cheats - ESP, Aimbot & Wallhack | mecchacheats.com',
-    'Meccha Chameleon cheats with ESP, aimbot tag assist, and wallhack tools for hiders and seekers. Auto paint, heat vision, minimap tracking, and stream-proof overlay.',
+    'Meccha Chameleon Cheats: ESP, Aimbot & Wallhack',
+    'Undetected Meccha Chameleon cheats with ESP, aimbot tag assist, wallhack heat vision, auto paint, and stream-proof overlay for Steam lobbies.',
     DOMAIN + "/",
     extra=home_extra,
     preload_hero=True,
@@ -198,7 +221,7 @@ home = head(
 <h2>Watch in action</h2>
 <p>Meccha cheats gameplay — camouflage, ESP, and seeker tools running in lobby footage.</p>
 </div>
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/meccha-cheats-video-poster.webp","Meccha cheats gameplay video watch in action")}
+{video_block(CHEATS_CLIP,CHEATS_POSTER,"Meccha cheats gameplay video watch in action")}
 </div>
 </section>
 
@@ -219,7 +242,7 @@ home = head(
 <section>
 <div class="wrap split">
 <div class="copy prose">
-<h1>Meccha Chameleon ESP for seeker rounds</h1>
+<h2>Meccha Chameleon ESP for seeker rounds</h2>
 <p>Seeker queues are where Meccha Chameleon ESP earns its keep. Heat vision shows hiders through walls. Minimap tracking pins the cluster so you are not jogging the long way around a map you barely know. When someone is blended into a brick wall, the wallhack outline still gives you a direction.</p>
 <p>Players searching “meccha esp” or “chameleon esp” usually want that same read: stop empty-checking. Pair ESP with super speed when the timer dips under thirty seconds. Instant Tag finishes the close when geometry would normally eat your swipe.</p>
 <p>lemorion_1224’s maps reward patience. ESP shortens the patience tax. You still need to move like you belong in the lobby — sprinting in a straight line at a painted player looks obvious — but you stop losing rounds to a hider sitting inside a shadow you walked past twice.</p>
@@ -318,19 +341,6 @@ home = head(
 </div>
 </section>
 
-<section class="video-section">
-<div class="wrap">
-<div class="section-head">
-<h2>More gameplay footage</h2>
-<p>Same demos from the product page — camouflage, ESP, and match tools.</p>
-</div>
-<div class="video-stack two">
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon cheats demo video bottom of homepage")}
-{video_block("/assets/video/meccha-chameleon-esp-showcase.mp4","/assets/img/poster-tiny.webp","Meccha ESP and seeker tools showcase video")}
-</div>
-</div>
-</section>
-
 <div class="bottom-cta">
 <h2>Get Meccha Chameleon cheats</h2>
 <p>ESP, aimbot-style tag assist, wallhack heat vision, and hider auto paint. Instant delivery after checkout.</p>
@@ -363,7 +373,7 @@ prod_schema = {
     "description": "Undetected Meccha Chameleon cheats with ESP, aimbot tag assist, wallhack heat vision, auto paint, and match tools.",
     "brand": {"@type": "Brand", "name": "mecchacheats.com"},
     "url": DOMAIN + "/cheats/",
-    "image": DOMAIN + "/assets/img/meccha-chameleon-cover.webp",
+    "image": DOMAIN + "/assets/img/mecchachets-clip-poster.webp",
     "offers": {
         "@type": "AggregateOffer",
         "lowPrice": "35",
@@ -381,11 +391,11 @@ faq_schema = {
 prod_extra = f'<script type="application/ld+json">{json.dumps(prod_schema, separators=(",",":"))}</script>\n<script type="application/ld+json">{json.dumps(faq_schema, separators=(",",":"))}</script>'
 
 cheats = head(
-    'Meccha Chameleon Cheats Features - ESP & Aimbot | mecchacheats.com',
-    'Meccha Chameleon cheats features: ESP wallhack, aimbot tag assist, auto paint, pose lock, minimap tracking, timer freeze, and stream-proof overlay for Steam lobbies.',
+    'Meccha Chameleon Cheats Features — ESP & Aimbot',
+    'Full Meccha Chameleon cheat list: ESP wallhack, aimbot tag assist, auto paint, pose lock, minimap tracking, timer freeze, and stream-proof overlay.',
     DOMAIN + "/cheats/",
     extra=prod_extra,
-) + nav("home") + f"""
+) + nav("cheats") + f"""
 <main class="article">
 <div class="wrap">
 <p class="breadcrumbs"><a href="/">Home</a> / Meccha Chameleon Cheats</p>
@@ -397,9 +407,8 @@ cheats = head(
 <a class="btn btn-secondary" href="#features">Jump to features</a>
 </div>
 
-<section class="video-stack two" style="margin-top:1.5rem">
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon cheats product demo video")}
-{video_block("/assets/video/meccha-chameleon-esp-showcase.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon ESP and aimbot showcase video", lazy=True)}
+<section class="video-stack" style="margin-top:1.5rem">
+{hero_video_block(CHEATS_CLIP,CHEATS_POSTER,"Meccha Chameleon cheats product demo video")}
 </section>
 
 <section class="prose" style="margin-top:2rem">
@@ -412,6 +421,9 @@ cheats = head(
 <section id="features">
 <h2>Complete Meccha Chameleon cheat features</h2>
 <p class="meta-line">Same list players open when they search meccha cheats, chameleon esp, or meccha chameleon aimbot.</p>
+<div class="video-stack" style="margin-bottom:1.5rem">
+{video_block(CHEATS_CLIP,CHEATS_POSTER,"Meccha cheats features clip showing ESP aimbot and camo modules")}
+</div>
 {features_html()}
 <div class="cta-row">
 <a class="btn btn-primary" href="{BUY}" rel="noopener sponsored">GET CHEATS</a>
@@ -431,9 +443,16 @@ cheats = head(
 </div>
 <p>Cloud DMA and AWS options exist for players who already run that stack. Most lobbies only need the standard path with stream-proof overlay toggled if you capture gameplay.</p>
 </div>
-<figure>
-<img src="/assets/img/meccha-chameleon-cover.webp" width="460" height="690" alt="Meccha Chameleon cover art for Steam cheat product page" loading="lazy" decoding="async">
-</figure>
+<aside class="req-aside" aria-label="Compatible setup checklist">
+<p class="eyebrow">Compatible setup</p>
+<ul>
+<li><strong>Steam client</strong>Meccha Chameleon installed and launchable on Windows.</li>
+<li><strong>No lockdown flip</strong>HVCI, Core Isolation, TPM, and Secure Boot can stay enabled.</li>
+<li><strong>Standard PC path</strong>Works on typical Win10/Win11 boxes without DMA hardware.</li>
+<li><strong>Optional Cloud DMA</strong>AWS / cloud DMA route available if you already run that stack.</li>
+<li><strong>Stream capture</strong>Stream-proof overlay keeps ESP off recordings when you stream.</li>
+</ul>
+</aside>
 </section>
 
 <section id="faq" class="faq" style="margin-top:2rem">
@@ -444,9 +463,8 @@ cheats = head(
 <section style="margin-top:2rem">
 <h2>Videos</h2>
 <p class="meta-line">Feature footage for Meccha Chameleon ESP, camouflage, and match tools.</p>
-<div class="video-stack two">
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon cheats video section demo", lazy=True)}
-{video_block("/assets/video/meccha-chameleon-esp-showcase.mp4","/assets/img/poster-tiny.webp","Meccha chameleon wallhack and seeker tools video", lazy=True)}
+<div class="video-stack">
+{video_block(CHEATS_CLIP,CHEATS_POSTER,"Meccha Chameleon cheats video section demo", lazy=True)}
 </div>
 </section>
 
@@ -464,8 +482,8 @@ print("wrote cheats", len(re.findall(r"[A-Za-z]+", re.sub(r"<[^>]+>"," ",cheats)
 
 # ========== BLOG INDEX ==========
 blog_index = head(
-    'Meccha Chameleon Cheats Blog - ESP & Aimbot Guides | mecchacheats.com',
-    'Blog posts on Meccha Chameleon cheats, ESP wallhack setups, aimbot tag tips, and hider camouflage tools for Steam public lobbies.',
+    'Meccha Chameleon Cheats Blog — ESP & Aimbot Guides',
+    'Guides on Meccha Chameleon cheats, ESP wallhack setups, aimbot tag tips, and hider camouflage tools for Steam public lobbies.',
     DOMAIN + "/blog/",
 ) + nav("blog") + f"""
 <main class="article">
@@ -474,9 +492,9 @@ blog_index = head(
 <h1>Meccha Chameleon Cheats Blog — ESP &amp; Aimbot Guides</h1>
 <p class="lead">Long guides for the searches that show up after bad lobbies: Meccha ESP, chameleon aimbot questions, and role-based cheat setups.</p>
 <div class="posts" style="margin-top:1.5rem">
-<a class="post" href="/blog/meccha-chameleon-esp-guide/"><span class="tag">ESP</span><h3>Meccha Chameleon ESP guide for seekers</h3><p>Heat vision, minimap tracking, wallhack habits that do not scream cheat.</p></a>
-<a class="post" href="/blog/meccha-chameleon-aimbot-tips/"><span class="tag">Aimbot</span><h3>Meccha Chameleon aimbot and instant tag tips</h3><p>Tag assists, obstacle hits, and closing with speed.</p></a>
-<a class="post" href="/blog/chameleon-cheats-hider-seeker/"><span class="tag">Roles</span><h3>Chameleon cheats for hiders and seekers</h3><p>Auto paint versus ESP — what to toggle each round.</p></a>
+<a class="post" href="/blog/meccha-chameleon-esp-guide/"><span class="tag">ESP</span><h2>Meccha Chameleon ESP guide for seekers</h2><p>Heat vision, minimap tracking, wallhack habits that do not scream cheat.</p></a>
+<a class="post" href="/blog/meccha-chameleon-aimbot-tips/"><span class="tag">Aimbot</span><h2>Meccha Chameleon aimbot and instant tag tips</h2><p>Tag assists, obstacle hits, and closing with speed.</p></a>
+<a class="post" href="/blog/chameleon-cheats-hider-seeker/"><span class="tag">Roles</span><h2>Chameleon cheats for hiders and seekers</h2><p>Auto paint versus ESP — what to toggle each round.</p></a>
 </div>
 <div class="cta-row" style="margin-top:2rem">
 <a class="btn btn-primary" href="{BUY}" rel="noopener sponsored">BUY CHEATS</a>
@@ -525,14 +543,14 @@ def article_page(slug, title, description, h1, date, body_html, keywords_label):
 # Blog 1 ESP
 article_page(
     "meccha-chameleon-esp-guide",
-    "Meccha Chameleon ESP Guide - Wallhack Tips | mecchacheats.com",
-    "Meccha Chameleon ESP guide covering heat vision wallhack, minimap hider tracking, and seeker habits. Learn how meccha esp and chameleon esp tools clear public lobbies.",
+    "Meccha Chameleon ESP Guide — Wallhack Tips",
+    "Meccha Chameleon ESP guide covering heat vision wallhack, minimap hider tracking, and seeker habits for clearing public lobbies.",
     "Meccha Chameleon ESP Guide for Seekers",
     "2026-08-01",
     f"""
 <div class="video-stack two" style="margin-bottom:1.5rem">
-{video_block("/assets/video/meccha-chameleon-esp-showcase.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon ESP wallhack guide video")}
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha cheats demo alongside ESP guide", lazy=True)}
+{video_block(ESP_CLIP,TINY_POSTER,"Meccha Chameleon ESP wallhack guide video")}
+{video_block(CHEATS_CLIP,TINY_POSTER,"Meccha cheats demo alongside ESP guide", lazy=True)}
 </div>
 <article class="prose">
 <p>Most seekers who search “meccha chameleon esp” already know how to walk a map. What they want is a read through walls when the last hider is painted into a beam. Meccha Chameleon ESP in this pack is heat vision plus minimap tracking. It is not a neon box festival unless you dial it that way.</p>
@@ -574,14 +592,14 @@ That is the whole seeker vision loop. Heat vision, minimap, reveal, scout camera
 # Blog 2 Aimbot
 article_page(
     "meccha-chameleon-aimbot-tips",
-    "Meccha Chameleon Aimbot Tips - Instant Tag | mecchacheats.com",
-    "Meccha Chameleon aimbot tips for instant tag assists, obstacle hits, and seeker closes. Covers mecha aimbot and chameleon aimbot searches with real lobby advice.",
+    "Meccha Chameleon Aimbot Tips — Instant Tag",
+    "Meccha Chameleon aimbot tips for instant tag assists, obstacle hits, and seeker closes in hide-and-seek lobbies.",
     "Meccha Chameleon Aimbot Tips and Instant Tag",
     "2026-08-03",
     f"""
 <div class="video-stack two" style="margin-bottom:1.5rem">
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Meccha Chameleon aimbot and tag assist demo video")}
-{video_block("/assets/video/meccha-chameleon-esp-showcase.mp4","/assets/img/poster-tiny.webp","ESP footage used with Meccha aimbot closes", lazy=True)}
+{video_block(CHEATS_CLIP,TINY_POSTER,"Meccha Chameleon aimbot and tag assist demo video")}
+{video_block(ESP_CLIP,TINY_POSTER,"ESP footage used with Meccha aimbot closes", lazy=True)}
 </div>
 <article class="prose">
 <p>Search logs for Meccha Chameleon are full of “meccha chameleon aimbot”, “mecha aimbot”, and “chameleon aimbot”. The game does not run like Valorant. Your win condition as seeker is a tag. Instant Tag in the <a href="/cheats/">Meccha Chameleon cheats</a> pack is the aimbot-shaped answer: connect through awkward geometry when a hider is melted into a prop.</p>
@@ -625,14 +643,14 @@ Ready to try it in a real lobby? Hit <a href="{BUY}" rel="noopener sponsored">GE
 # Blog 3 roles
 article_page(
     "chameleon-cheats-hider-seeker",
-    "Chameleon Cheats for Hiders & Seekers | mecchacheats.com",
-    "Chameleon cheats broken down for hiders and seekers: auto paint, pose lock, Meccha ESP, aimbot tag assist, stamina, and match timer tools for Meccha Chameleon.",
+    "Chameleon Cheats for Hiders and Seekers",
+    "Chameleon cheats for hiders and seekers: auto paint, pose lock, Meccha ESP, aimbot tag assist, stamina, and match timer tools.",
     "Chameleon Cheats for Hiders and Seekers",
     "2026-08-05",
     f"""
 <div class="video-stack two" style="margin-bottom:1.5rem">
-{video_block("/assets/video/meccha-chameleon-cheats-demo.mp4","/assets/img/poster-tiny.webp","Chameleon cheats hider camouflage demo video")}
-{video_block("/assets/video/meccha-chameleon-esp-showcase.mp4","/assets/img/poster-tiny.webp","Seeker chameleon ESP tools video", lazy=True)}
+{video_block(CHEATS_CLIP,TINY_POSTER,"Chameleon cheats hider camouflage demo video")}
+{video_block(ESP_CLIP,TINY_POSTER,"Seeker chameleon ESP tools video", lazy=True)}
 </div>
 <article class="prose">
 <p>Meccha Chameleon flips your brain every round. Hider tools and seeker tools are not the same menu with a skin. Chameleon cheats that work only list both clearly. This guide splits the <a href="/cheats/">Meccha Chameleon cheats</a> pack by role so you stop running heat vision while trying to blend into a couch.</p>
@@ -678,8 +696,8 @@ Last note from too many late lobbies — stamina and pose lock win more hider ro
 
 # Privacy
 privacy = head(
-    'Privacy Policy | mecchacheats.com',
-    'Privacy policy for mecchacheats.com. How the Meccha Chameleon cheats info site handles visits, links, and basic analytics.',
+    'Privacy Policy — mecchacheats.com',
+    'Privacy policy for mecchacheats.com covering visits, outbound purchase links, and basic analytics on this Meccha cheats info site.',
     DOMAIN + "/privacy/",
 ) + nav("home") + f"""
 <main class="article">
@@ -713,6 +731,8 @@ Allow: /
 Sitemap: {DOMAIN}/sitemap.xml
 """)
 
+from datetime import date
+today = date.today().isoformat()
 pages = [
     ("/", "1.0", "daily"),
     ("/cheats/", "0.9", "weekly"),
@@ -724,7 +744,7 @@ pages = [
 ]
 sm = ['<?xml version="1.0" encoding="UTF-8"?>','<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
 for path, pri, freq in pages:
-    sm.append(f"<url><loc>{DOMAIN}{path}</loc><changefreq>{freq}</changefreq><priority>{pri}</priority></url>")
+    sm.append(f"<url><loc>{DOMAIN}{path}</loc><lastmod>{today}</lastmod><changefreq>{freq}</changefreq><priority>{pri}</priority></url>")
 sm.append("</urlset>")
 (ROOT / "sitemap.xml").write_text("\n".join(sm) + "\n")
 
