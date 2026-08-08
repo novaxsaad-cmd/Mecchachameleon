@@ -438,9 +438,16 @@ cheats = head(
 </div>
 <p>Cloud DMA and AWS options exist for players who already run that stack. Most lobbies only need the standard path with stream-proof overlay toggled if you capture gameplay.</p>
 </div>
-<figure>
-<img src="/assets/img/meccha-chameleon-cover.webp" width="460" height="690" alt="Meccha Chameleon cover art for Steam cheat product page" loading="lazy" decoding="async">
-</figure>
+<aside class="req-aside" aria-label="Compatible setup checklist">
+<p class="eyebrow">Compatible setup</p>
+<ul>
+<li><strong>Steam client</strong>Meccha Chameleon installed and launchable on Windows.</li>
+<li><strong>No lockdown flip</strong>HVCI, Core Isolation, TPM, and Secure Boot can stay enabled.</li>
+<li><strong>Standard PC path</strong>Works on typical Win10/Win11 boxes without DMA hardware.</li>
+<li><strong>Optional Cloud DMA</strong>AWS / cloud DMA route available if you already run that stack.</li>
+<li><strong>Stream capture</strong>Stream-proof overlay keeps ESP off recordings when you stream.</li>
+</ul>
+</aside>
 </section>
 
 <section id="faq" class="faq" style="margin-top:2rem">
